@@ -17,7 +17,7 @@ interface EnvConfig {
 
 export const ENV: EnvConfig = {
   PORT: process.env.PORT || "5000",
-  MONGO_URI: process.env.MONGO_URI || "mongodb://127.0.0.1:27017/notesdb",
+  MONGO_URI: process.env.MONGO_URI || "mongodb+srv://jaivanthkoppula999_db_user:Jaivanth999@notesdb.7ai65in.mongodb.net/",
   JWT_SECRET: process.env.JWT_SECRET || "fallback-secret",
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN || "1h",  // ✅ now TS sees string only
   EMAIL_HOST: process.env.EMAIL_HOST || "smtp.gmail.com",
