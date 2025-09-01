@@ -7,8 +7,15 @@ import authRoutes from "./routes/auth";
 import noteRoutes from "./routes/notes";
 
 const app = express();
+const allowedOrigins = ["http://localhost:5173", "https://notesappzz.vercel.app"];
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) callback(null, true);
+    else callback(new Error("Not allowed by CORS"));
+  },
+  credentials: true
+}));
 
-app.use(cors({ origin: "https://notes-app-w4zb.vercel.app/", credentials: true }));
 app.use(express.json());
 app.use(morgan("dev"));
 
