@@ -6,6 +6,8 @@ const api = axios.create({
   withCredentials: true, // allow cookies
 });
 
+export const registerUser = (data: { email: string; password: string; name: string }) =>
+  api.post("/auth/register", data);
 // Attach token automatically
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
