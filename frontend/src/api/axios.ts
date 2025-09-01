@@ -1,9 +1,10 @@
+// src/api/axios.ts
 import axios from "axios";
 
-export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL, 
+const api = axios.create({
+  baseURL: "https://notesapp1-7ty0.onrender.com/api", // ✅ backend URL
+  withCredentials: true, // allow cookies
 });
-
 
 // Attach token automatically
 api.interceptors.request.use((config) => {
